@@ -1,0 +1,9 @@
+messages:
+  help: '&6Usage: &fALAD &7[&8toggle&7] [&8set #&7]%br%%br%  &btoggle &7= &3Toggle functionality%br%  &bset # &7= &3Set lift value to #. Default 0.38'
+  plugin-enabled: '&6Plugin functionality &aenabled'
+  plugin-disabled: '&6Plugin functionality &adisabled'
+  valueset: '&6Lift value set to &a%value%!'
+  valueset-invalid: '&cThat is not a valid number!'
+config:
+  value: 0.38
+  status: true
