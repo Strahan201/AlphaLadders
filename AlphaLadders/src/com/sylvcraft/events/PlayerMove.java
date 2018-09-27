@@ -20,6 +20,7 @@ public class PlayerMove implements Listener {
 	@EventHandler
   public void onPlayerMove(PlayerMoveEvent e) {
 		if (!plugin.getConfig().getBoolean("config.status")) return;
+
 		if (!e.getPlayer().hasPermission("alad.use") && !e.getPlayer().hasPermission("alad.admin")) return;
 		
 		if (e.getFrom().getBlockY() >= e.getTo().getBlockY()) return;
