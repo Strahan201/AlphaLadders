@@ -4,6 +4,7 @@ messages:
   plugin-disabled: '&6Plugin functionality &adisabled'
   valueset: '&6Lift value set to &a%value%!'
   valueset-invalid: '&cThat is not a valid number!'
+  access-denied: '&cAccess denied!'
 config:
   value: 0.38
   status: true

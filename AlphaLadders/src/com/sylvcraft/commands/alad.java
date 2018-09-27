@@ -17,6 +17,10 @@ public class alad implements CommandExecutor {
   
   public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
     try {
+    	if (!sender.hasPermission("alad.admin")) {
+    		plugin.msg("access-denied", sender);
+    		return true;
+    	}
 			if (args.length == 0) {
         plugin.msg("help", sender);
         return true;

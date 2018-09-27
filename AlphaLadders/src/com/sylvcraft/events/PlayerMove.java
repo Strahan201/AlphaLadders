@@ -20,13 +20,13 @@ public class PlayerMove implements Listener {
 	@EventHandler
   public void onPlayerMove(PlayerMoveEvent e) {
 		if (!plugin.getConfig().getBoolean("config.status")) return;
+		if (!e.getPlayer().hasPermission("alad.use") && !e.getPlayer().hasPermission("alad.admin")) return;
 		
-		if (e.getFrom().getBlockY() < e.getTo().getBlockY()) {
-			if (e.getFrom().getBlock().getType() == Material.LADDER && e.getTo().getBlock().getType() != Material.LADDER) {
-				if (e.getTo().getBlock().getRelative(BlockFace.UP).getType() == Material.LADDER) {
-					e.getPlayer().setVelocity(new Vector(0, plugin.getConfig().getDouble("config.value", 0.38), 0));  
-				}
-			}
-		}
+		if (e.getFrom().getBlockY() >= e.getTo().getBlockY()) return;
+		if (e.getFrom().getBlock().getType() != Material.LADDER) return;
+		if (e.getTo().getBlock().getType() == Material.LADDER) return;
+		if (e.getTo().getBlock().getRelative(BlockFace.UP).getType() != Material.LADDER) return;
+
+		e.getPlayer().setVelocity(new Vector(0, plugin.getConfig().getDouble("config.value", 0.38), 0));  
   }
 }
